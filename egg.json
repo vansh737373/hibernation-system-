@@ -16,13 +16,6 @@
         "Java 16": "ghcr.io\/pterodactyl\/yolks:java_16j9",
         "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11j9",
         "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8j9",
-        "NodeJS 20": "ghcr.io\/parkervcp\/yolks:nodejs_20",
-        "NodeJS 19": "ghcr.io\/parkervcp\/yolks:nodejs_19",
-        "NodeJS 18": "ghcr.io\/parkervcp\/yolks:nodejs_18",
-        "NodeJS 17": "ghcr.io\/parkervcp\/yolks:nodejs_17",
-        "NodeJS 16": "ghcr.io\/parkervcp\/yolks:nodejs_16",
-        "NodeJS 14": "ghcr.io\/parkervcp\/yolks:nodejs_14",
-        "NodeJS 12": "ghcr.io\/parkervcp\/yolks:nodejs_12"
     },
     "file_denylist": [
     ],
