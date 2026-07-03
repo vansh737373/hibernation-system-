@@ -20,7 +20,7 @@ $(tput setaf 6) FlareLax Custom Edition - PaperMC Only
 forceStuffs() {
 mkdir -p plugins && mkdir -p plugins/noMemberShutdown
 cd plugins && curl -O https://cdn.modrinth.com/data/DgUoVPBP/versions/QucVTrXS/IdleServerShutdown-1.3.jar && cd ../.
-cd plugins && cd noMemberShutdown && curl -O https://raw.githubusercontent.com/FlareLax/FlareLaxEgg/main/config.yml && cd ../. && cd ../.
+cd plugins && cd noMemberShutdown && curl -O https://raw.githubusercontent.com/vansh737373/hibernation-system-/main/config.yml && cd ../. && cd ../.
 echo "eula=true" > eula.txt
 }
 
