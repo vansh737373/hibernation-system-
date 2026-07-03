@@ -1,0 +1,56 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-07-03T00:00:00+00:00",
+    "name": "Hibernation System Egg",
+    "author": "vansh737373@github.com",
+    "description": "PaperMC egg with built-in hibernation support. Auto-shuts down when idle and wakes up when players connect.",
+    "features": null,
+    "docker_images": {
+        "Java 21": "ghcr.io\/pterodactyl\/yolks:java_21",
+        "Java 17": "ghcr.io\/pterodactyl\/yolks:java_17",
+        "Java 16": "ghcr.io\/pterodactyl\/yolks:java_16",
+        "Java 11": "ghcr.io\/pterodactyl\/yolks:java_11",
+        "Java 8": "ghcr.io\/pterodactyl\/yolks:java_8"
+    },
+    "file_denylist": [],
+    "startup": "bash install.sh",
+    "config": {
+        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-ip\": \"0.0.0.0\",\r\n            \"server-port\": \"{{server.build.default.port}}\",\r\n            \"query.port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! For help, type \"\r\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# Hibernation System Installation Script\r\n# Server Files: \/mnt\/server\r\napt-get update -y\r\napt-get install -y curl ca-certificates\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\ncurl -sL -o install.sh https:\/\/raw.githubusercontent.com\/vansh737373\/hibernation-system-\/main\/install.sh\r\nchmod +x install.sh",
+            "container": "debian:bookworm-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Minecraft Version",
+            "description": "The version of Minecraft to download. Leave at latest to always get the latest version. Invalid versions will default to latest.",
+            "env_variable": "MINECRAFT_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "Enable Hibernation (Auto-Start)",
+            "description": "If enabled, the server will automatically shut down when no players are online (idle) and wake up when a player attempts to connect. (Only for Java platforms like Paper\/Purpur\/Bungee)",
+            "env_variable": "ENABLE_HIBERNATION",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|boolean",
+            "field_type": "text"
+        }
+    ]
+}
